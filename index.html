@@ -28,12 +28,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
     <!-- 폰트 미리 로드 -->
-    <link rel="preload" href="3) test/data/font.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="data/font.ttf" as="font" type="font/ttf" crossorigin>
     <style>
         /* 인라인으로 폰트 정의 추가 */
         @font-face {
             font-family: 'CustomMatrix';
-            src: url('fonts/font.ttf') format('truetype');
+            src: url('data/font.ttf') format('truetype');
             font-weight: normal;
             font-style: normal;
             font-display: block;
@@ -213,7 +213,7 @@
 <body>
     <!-- 자동 재생되는 배경 음악 (무한 반복 설정) -->
     <audio id="background-music" loop autoplay preload="auto">
-        <source src="../data/music.mp3" type="audio/mp3">
+        <source src="data/music.mp3" type="audio/mp3">
         브라우저가 오디오를 지원하지 않습니다.
     </audio>
     
@@ -223,7 +223,7 @@
     <div class="video-container">
         <video id="center-video" loop autoplay muted playsinline preload="auto" onended="this.play()">
             <!-- 상대 경로로 변경 -->
-            <source src="../data/video.mp4" type="video/mp4">
+            <source src="data/video.mp4" type="video/mp4">
             브라우저가 비디오를 지원하지 않습니다.
         </video>
     </div>
@@ -356,7 +356,7 @@ I think true love can happen in long distance relationship. But I dont want to s
             <div class="believe-video-section">
                 <div class="video-wrapper">
                     <video id="believe-video" loop muted autoplay playsinline preload="auto" onended="this.play()">
-                        <source src="../data/believe.mp4" type="video/mp4">
+                        <source src="data/believe.mp4" type="video/mp4">
                         브라우저가 비디오를 지원하지 않습니다.
                     </video>
                 </div>

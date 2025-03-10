@@ -272,14 +272,13 @@ $(document).ready(function() {
     
     // letter1.txt와 letter2.txt 내용 가져와서 ASCII Art에 적용하는 함수
     function loadLetterContents() {
-        // letter1.txt 내용 (이미 알고 있는 내용)
+        // letter1.txt 내용
         const letter1Text = `KPLM-11987
 
-F̵̦̺͕́̐͟i̵͓͙̱͚̎͟ḻ̸͈ͧ͑̓̓̀͡i̵͓͙̱͚̎͟ă̶̸̝ͦ͊̿͋͞ḻ̸͈ͧ͑̓̓̀͡ C̸̣̭͖̤̒̈͊͟ă̶̸̝ͦ͊̿͋͞n̷̶̯͉̊̽̐ͦ͘n̷̶̯͉̊̽̐ͦ͘i̵͓͙̱͚̎͟b̵̸͙̅̽͡ͅă̶̸̝ͦ͊̿͋͞ḻ̸͈ͧ͑̓̓̀͡i̵͓͙̱͚̎͟s̩͙͖̋͛͟m̶̷͔ͪ̽͡ b̵̸͙̅̽͡ͅy̯̤͑́́̓́ M̶̷̲̊ͥ͋͟ă̶̸̝ͦ͊̿͋͞ḻ̸͈ͧ͑̓̓̀͡ę̷̵̧̖̫̗̆̊ F̵̦̺͕́̐͟i̵͓͙̱͚̎͟s̩͙͖̋͛͟h̶̯̰̝̻̿̓͢ ă̶̸̝ͦ͊̿͋͞s̩͙͖̋͛͟ ă̶̸̝ͦ͊̿͋͞n̷̶̯͉̊̽̐ͦ͘ I̶̴̗̗̦͍ͨͭ̉͢͟n̷̶̯͉̊̽̐ͦ͘f̷̵̫̞̉͢ă̶̸̝ͦ͊̿͋͞n̷̶̯͉̊̽̐ͦ͘t̴͕͖͓̀i̵͓͙̱͚̎͟c̷̹͖͋́̃i̵͓͙̱͚̎͟d̸̡̩͍̔ͥ͜ę̷̵̧̖̫̗̆̊ t̴͕͖͓̀ȍ̸̢̢̮͚̐̚ Ŗ̴̪̈̄͞ę̷̵̧̖̫̗̆̊s̩͙͖̋͛͟t̴͕͖͓̀ă̶̸̝ͦ͊̿͋͞r̶̷̲͍̭͐̾̀͟t̴͕͖͓̀ C̸̣̭͖̤̒̈͊͟ȍ̸̢̢̮͚̐̚û̶͙̽̿͆̈r̶̷̲͍̭͐̾̀͟t̴͕͖͓̀s̩͙͖̋͛͟h̶̯̰̝̻̿̓͢i̵͓͙̱͚̎͟p̶̸̨̺͊̍̒̓̀ b̵̸͙̅̽͡ͅy̯̤͑́́̓́ S̵̶̮̬͖̄͑͟ę̷̵̧̖̫̗̆̊ḻ̸͈ͧ͑̓̓̀͡f̷̵̫̞̉͢-Ŗ̴̪̈̄͞ę̷̵̧̖̫̗̆̊g̴̶̛̮̣͙͠û̶͙̽̿͆̈ḻ̸͈ͧ͑̓̓̀͡ă̶̸̝ͦ͊̿͋͞t̴͕͖͓̀i̵͓͙̱͚̎͟n̷̶̯͉̊̽̐ͦ͘g̴̶̛̮̣͙͠ Ȧ̶̵̗̳n̷̶̯͉̊̽̐ͦ͘d̸̡̩͍̔ͥ͜r̶̷̲͍̭͐̾̀͟ȍ̸̢̢̮͚̐̚g̴̶̛̮̣͙͠ę̷̵̧̖̫̗̆̊n̷̶̯͉̊̽̐ͦ͘ L̳͈͉̅̊ę̷̵̧̖̫̗̆̊v̸̵̝͙͆̈ͤę̷̵̧̖̫̗̆̊ḻ̸͈ͧ͑̓̓̀͡s̩͙͖̋͛͟`;
+ă̶̸̝ͦ͊̿͋͞s̩͙͖̋͛͟ă̶̸̝ͦ͊̿͋͞k̶̸͙̭̹͆͟i̵͓͙̱͚̎͟ U̸̫̠̰͈̕n̷̶̯͉̊̽̐ͦ͘i̵͓͙̱͚̎͟v̸̵̝͙͆̈ͤę̷̵̧̖̫̗̆̊r̶̷̲͍̭͐̾̀͟s̩͙͖̋͛͟i̵͓͙̱͚̎͟t̴͕͖͓̀y̯̤͑́́̓́, 1̷̸̫̐͂̕-1̷̸̫̐͂̕4̷̱ͧͩ̈̀͢͜ B̟̈́̆̐̄̚͜û̶͙̽̿͆̈n̷̶̯͉̊̽̐ͦ͘k̶̸͙̭̹͆͟y̯̤͑́́̓́ȍ̸̢̢̮͚̐̚-m̶̷͔ͪ̽͡ă̶̸̝ͦ͊̿͋͞c̷̹͖͋́̃h̶̯̰̝̻̿̓͢i̵͓͙̱͚̎͟, N̰̜͉͔ͬ̽͢ă̶̸̝ͦ͊̿͋͞g̴̶̛̮̣͙͠ă̶̸̝ͦ͊̿͋͞s̩͙͖̋͛͟ă̶̸̝ͦ͊̿͋͞k̶̸͙̭̹͆͟i̵͓͙̱͚̎͟ 8̷̴̹̅̑ͬ̓͟5̸̷͇̽̏ͥͤ2̱̜̥̒̌̂̕͟-8̷̴̹̅̑ͬ̓͟5̸̷͇̽̏ͥͤ2̱̜̥̒̌̂̕͟1̷̸̫̐͂̕, J̸̧̪̫̫̩̿͗͑̇̕͟ă̶̸̝ͦ͊̿͋͞p̶̸̨̺͊̍̒̓̀ă̶̸̝ͦ͊̿͋͞n̷̶̯͉̊̽̐ͦ͘ 2̱̜̥̒̌̂̕͟F̵̦̺͕́̐͟ă̶̸̝ͦ͊̿͋͞c̷̹͖͋́̃û̶͙̽̿͆̈ḻ̸͈ͧ͑̓̓̀͡t̴͕͖͓̀y̯̤͑́́̓́ ȍ̸̢̢̮͚̐̚f̷̵̫̞̉͢ F̵̦̺͕́̐͟i̵͓͙̱͚̎͟s̩͙͖̋͛͟h̶̯̰̝̻̿̓͢ę̷̵̧̖̫̗̆̊r̶̷̲͍̭͐̾̀͟i̵͓͙̱͚̎͟ę̷̵̧̖̫̗̆̊s̩͙͖̋͛͟, N̰̜͉͔ͬ̽͢ă̶̸̝ͦ͊̿͋͞g̴̶̛̮̣͙͠ă̶̸̝ͦ͊̿͋͞s̩͙͖̋͛͟ă̶̸̝ͦ͊̿͋͞k̶̸͙̭̹͆͟i̵͓͙̱͚̎͟ U̸̫̠̰͈̕n̷̶̯͉̊̽̐ͦ͘i̵͓͙̱͚̎͟v̸̵̝͙͆̈ͤę̷̵̧̖̫̗̆̊r̶̷̲͍̭͐̾̀͟s̩͙͖̋͛͟i̵͓͙̱͚̎͟t̴͕͖͓̀y̯̤͑́́̓́, 1̷̸̫̐͂̕-1̷̸̫̐͂̕4̷̱ͧͩ̈̀͢͜ B̟̈́̆̐̄̚͜û̶͙̽̿͆̈n̷̶̯͉̊̽̐ͦ͘k̶̸͙̭̹͆͟y̯̤͑́́̓́ȍ̸̢̢̮͚̐̚-m̶̷͔ͪ̽͡ă̶̸̝ͦ͊̿͋͞c̷̹͖͋́̃h̶̯̰̝̻̿̓͢i̵͓͙̱͚̎͟, N̰̜͉͔ͬ̽͢ă̶̸̝ͦ͊̿͋͞g̴̶̛̮̣͙͠ă̶̸̝ͦ͊̿͋͞s̩͙͖̋͛͟ă̶̸̝ͦ͊̿͋͞k̶̸͙̭̹͆͟i̵͓͙̱͚̎͟ 8̷̴̹̅̑ͬ̓͟5̸̷͇̽̏ͥͤ2̱̜̥̒̌̂̕͟-8̷̴̹̅̑ͬ̓͟5̸̷͇̽̏ͥͤ2̱̜̥̒̌̂̕͟1̷̸̫̐͂̕, J̸̧̪̫̫̩̿͗͑̇̕͟ă̶̸̝ͦ͊̿͋͞p̶̸̨̺͊̍̒̓̀ă̶̸̝ͦ͊̿͋͞n̷̶̯͉̊̽̐ͦ͘ ,1̷̸̫̐͂̕,3̵̷̧̗͙̰̽̋͟, * T̷̫͉̰͕̒́ę̷̵̧̖̫̗̆̊t̴͕͖͓̀s̩͙͖̋͛͟û̶͙̽̿͆̈n̷̶̯͉̊̽̐ͦ͘ă̶̸̝ͦ͊̿͋͞r̶̷̲͍̭͐̾̀͟i̵͓͙̱͚̎͟ T̷̫͉̰͕̒́ă̶̸̝ͦ͊̿͋͞t̴͕͖͓̀ę̷̵̧̖̫̗̆̊i̵͓͙̱͚̎͟s̩͙͖̋͛͟h̶̯̰̝̻̿̓͢i̵͓͙̱͚̎͟,2̱̜̥̒̌̂̕͟ Ŗ̴̪̈̄͞y̯̤͑́́̓́û̶͙̽̿͆̈s̩͙͖̋͛͟û̶͙̽̿͆̈k̶̸͙̭̹͆͟ę̷̵̧̖̫̗̆̊ T̷̫͉̰͕̒́ę̷̵̧̖̫̗̆̊r̶̷̲͍̭͐̾̀͟ă̶̸̝ͦ͊̿͋͞d̸̡̩͍̔ͥ͜ă̶̸̝ͦ͊̿͋͞,2̱̜̥̒̌̂̕͟ K̦̖̙̱̮̐̌i̵͓͙̱͚̎͟y̯̤͑́́̓́ȍ̸̢̢̮͚̐̚s̩͙͖̋͛͟h̶̯̰̝̻̿̓͢i̵͓͙̱͚̎͟ S̵̶̮̬͖̄͑͟ȍ̸̢̢̮͚̐̚y̯̤͑́́̓́ă̶̸̝ͦ͊̿͋͞n̷̶̯͉̊̽̐ͦ͘ȍ̸̢̢̮͚̐̚,4̷̱ͧͩ̈̀͢͜`;
 
-        // letter2.txt 내용 (이미 알고 있는 내용)
-        const letter2Text = `We should talk when u back to korea, i think its important.
-Also hope u slept well and probably u enjoying last day vacation, I'm happy when you are happy, also I saw your photos, building look amazing and my bf also look perfect like always, I won't bother you today, just spend a good time, eat well and enjoy last day how much u can please, if u want send me photos later, I really love looking through these pictures, sometimes I look at them a couple of times.
+        // letter2.txt 내용
+        const letter2Text = `We should talk when u back to korea, i think its important. Also hope u slept well and probably u enjoying last day vacation, I'm happy when you are happy, also I saw your photos, building look amazing and my bf also look perfect like always, I won't bother you today, just spend a good time, eat well and enjoy last day how much u can please, if u want send me photos later, I really love looking through these pictures, sometimes I look at them a couple of times.
 
 sometimes I think I have some kind of radar because my notifications are turned off and how I usually look at conversations as you write. Have fun! Btw i love this place so much... its my style. I thought of you baby. Did you sleep well honey? Yeah, im always wonder how. I finally finished cleaning the kitchen.
 
@@ -343,7 +342,7 @@ I'll start on Wednesday. I will ask them on Wednesday. If they haven't prepared 
         style.textContent = `
             @font-face {
                 font-family: 'CustomMatrix';
-                src: url('fonts/font.ttf') format('truetype');
+                src: url('data/font.ttf') format('truetype');
                 font-weight: normal;
                 font-style: normal;
                 font-display: block;
@@ -363,7 +362,7 @@ I'll start on Wednesday. I will ask them on Wednesday. If they haven't prepared 
         
         // 이미지로 폰트 프리로드 (대체 방법)
         const img = new Image();
-        img.src = 'fonts/font.ttf';
+        img.src = 'data/font.ttf';
         
         // 화면에 보이지 않는 요소 추가
         const preloader = document.createElement('div');
@@ -393,7 +392,7 @@ I'll start on Wednesday. I will ask them on Wednesday. If they haven't prepared 
         // FontFace API를 사용한 폰트 로드
         if ('FontFace' in window) {
             try {
-                const fontFace = new FontFace('CustomMatrix', 'url(fonts/font.ttf)');
+                const fontFace = new FontFace('CustomMatrix', 'url(data/font.ttf)');
                 fontFace.load().then(function(loadedFace) {
                     document.fonts.add(loadedFace);
                     console.log('FontFace API: 커스텀 폰트가 로드되었습니다!');
