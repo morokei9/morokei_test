@@ -1,0 +1,198 @@
+/* ASCII Art 애니메이션 스타일 */
+.asciiart-wrap {
+  background: #000;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 30px;
+  max-height: 800px; /* 높이 증가 */
+  padding: 8px; /* 패딩 줄여서 내부 공간 확보 */
+  border: 1px solid #333;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  position: relative;
+  z-index: 10;
+  text-align: center; /* 텍스트 중앙 정렬 */
+}
+
+.asciiart {
+  -webkit-background-clip: text;
+  background-clip: text;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+  word-break: break-all;
+  
+  color: #fff;
+  font-family: monospace;
+  font-size: 12px; /* 폰트 크기 더 증가 */
+  font-weight: bold;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  padding: 3px;
+  text-align: justify;
+  
+  /* 더 많은 텍스트 필요 - 반복 */
+  overflow: hidden;
+  
+  /* 애니메이션 추가 */
+  animation: backgroundChange 20s infinite alternate;
+}
+
+.art-1 {
+  background-image: url('../data/image/image1.png');
+  height: 600px;
+  overflow: hidden; /* 스크롤 제거 */
+  min-height: 500px;
+  width: 100%;
+  background-size: 100% 100%;
+  font-size: 7.2px; /* 이전 크기에서 20% 감소 (9px * 0.8) */
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+.art-2 {
+  background-image: url('../data/image/image2.png');
+  animation-delay: 5s;
+  height: 600px;
+  overflow: hidden; /* 스크롤 제거 */
+  min-height: 500px;
+  width: 100%;
+  background-size: 100% 100%;
+  font-size: 6.4px; /* 이전 크기에서 20% 감소 (8px * 0.8) */
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+.art-3 {
+  background-image: url('../data/image/image3.png');
+  animation-delay: 10s;
+  height: 600px;
+  overflow: hidden; /* 스크롤 제거 */
+  min-height: 500px;
+  width: 100%;
+  background-size: 100% 100%;
+  font-family: 'CustomMatrix', monospace; /* 커스텀 폰트 적용 */
+  font-size: 8px; /* 이전 크기에서 20% 감소 (10px * 0.8) */
+  letter-spacing: normal;
+  line-height: normal;
+}
+
+/* Matrix Rain 애니메이션 스타일 */
+#matrix-canvas {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: fixed; /* fixed로 변경하여 스크롤에 영향 받지 않음 */
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+/* 페이지 제목 스타일 */
+h1 {
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+  color: #0f0;
+  position: relative;
+  z-index: 10;
+  margin-bottom: 40px;
+}
+
+/* 애니메이션 정의 */
+@keyframes backgroundChange {
+  0% {
+    background-position: 0% 0%;
+  }
+  25% {
+    background-position: 100% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  75% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+/* 폰트 정의 */
+@font-face {
+  font-family: 'CustomMatrix';
+  src: url('fonts/font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+/* ASCII 컨테이너 추가 스타일 */
+.ascii-container {
+  background: rgba(0, 0, 0, 0.7);
+  padding: 30px;
+  border-radius: 10px;
+  margin-top: 180px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* 드롭다운 메뉴 스타일 */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #1a1a1a;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.8);
+  z-index: 1001;
+  border: 1px solid #333;
+}
+
+.dropdown-content a {
+  color: #ddd;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 14px;
+}
+
+.dropdown-content a:hover {
+  background-color: #222;
+  color: #0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* 반응형 스타일 */
+@media (max-width: 768px) {
+  .asciiart {
+    font-size: 8px;
+  }
+  
+  .art-3 {
+    font-size: 10px;
+  }
+  
+  .asciiart-wrap {
+    max-height: 300px;
+  }
+  
+  .art-1, .art-2, .art-3 {
+    height: 300px;
+  }
+  
+  .video-container {
+    width: 90%;
+  }
+  
+  .dropdown-content {
+    position: relative;
+    width: 100%;
+  }
+}
