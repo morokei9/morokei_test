@@ -279,6 +279,9 @@ $(document).ready(function() {
             generateRandomLetters();
         }).catch(error => {
             console.error('Error loading letters:', error);
+            const warn = '파일을 로드할 수 없습니다. 로컬 웹 서버에서 실행해 보세요.';
+            $('.art-1').text(warn);
+            $('.art-2').text(warn);
         });
     }
     // 랜덤 알파벳 생성 함수 (art-3용)
