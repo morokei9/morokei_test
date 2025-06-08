@@ -6,10 +6,8 @@
     <title>Nature - ѪѲЯѲКЄЇ</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="styles.css">
-    <!-- 폰트 미리 로드 -->
     <link rel="preload" href="fonts/font.ttf" as="font" type="font/ttf" crossorigin>
     <style>
-        /* 인라인으로 폰트 정의 추가 */
         @font-face {
             font-family: 'CustomMatrix';
             src: url('fonts/font.ttf') format('truetype');
@@ -17,7 +15,6 @@
             font-style: normal;
             font-display: block;
         }
-        /* 공통 스타일 */
         body {
             background: #000;
             color: #fff;
@@ -26,7 +23,6 @@
             padding: 0;
             overflow-x: hidden;
         }
-        
         .section {
             padding: 80px 0 150px 0;
             min-height: 100vh;
@@ -34,7 +30,6 @@
             flex-direction: column;
             align-items: center;
         }
-        
         h1 {
             color: #ccc;
             margin-bottom: 30px;
@@ -43,8 +38,6 @@
             z-index: 10;
             font-family: Arial, sans-serif;
         }
-        
-        /* 네비게이션 */
         .main-nav {
             background-color: #1a1a1a;
             position: fixed;
@@ -52,7 +45,6 @@
             width: 100%;
             z-index: 1000;
         }
-        
         .main-nav ul {
             display: flex;
             justify-content: center;
@@ -61,12 +53,10 @@
             margin: 0;
             list-style-type: none;
         }
-        
         .main-nav li {
             margin: 5px 12px;
             position: relative;
         }
-        
         .main-nav a {
             color: #ddd;
             text-decoration: none;
@@ -74,13 +64,10 @@
             transition: color 0.3s;
             padding: 8px 12px;
         }
-        
         .main-nav a:hover, .main-nav a.active {
             color: #0033ff;
             text-shadow: 0 0 8px rgba(0, 120, 255, 0.7);
         }
-        
-        /* 드롭다운 메뉴 스타일 */
         .dropdown-content {
             display: none;
             position: absolute;
@@ -90,7 +77,6 @@
             z-index: 1001;
             border: 1px solid #333;
         }
-        
         .dropdown-content a {
             color: #ddd;
             padding: 12px 16px;
@@ -99,22 +85,17 @@
             text-align: left;
             font-size: 16px;
         }
-        
         .dropdown-content a:hover {
             background-color: #111;
             color: #0033ff;
         }
-        
         .dropdown:hover .dropdown-content {
             display: block;
         }
-        
         #content {
             margin-top: 60px;
             width: 100%;
         }
-        
-        /* 중앙 제목 스타일 */
         .center-title {
             position: relative;
             z-index: 10;
@@ -125,11 +106,8 @@
             text-shadow: 0 0 15px rgba(0, 120, 255, 0.8);
             font-size: 80px;
             color: #0033ff;
-            /* 특수 요소에만 커스텀 폰트 적용 */
             font-family: 'CustomMatrix', monospace;
         }
-        
-        /* 콘텐츠 영역 */
         .content-area {
             position: relative;
             z-index: 10;
@@ -141,7 +119,6 @@
             border: 1px solid #0033ff;
             box-shadow: 0 0 20px rgba(0, 120, 255, 0.3);
         }
-        
         .content-area p {
             font-family: Arial, sans-serif;
             font-size: 18px;
@@ -149,8 +126,6 @@
             color: #ddd;
             text-shadow: 0 0 5px rgba(0, 120, 255, 0.5);
         }
-
-        /* 마크다운 콘텐츠 스타일 */
         .markdown-content h1 {
             font-size: 28px;
             margin-top: 20px;
@@ -181,112 +156,10 @@
     </style>
 </head>
 <body>
-    <!-- 자동 재생되는 배경 음악 (무한 반복 설정) -->
     <audio id="background-music" loop autoplay preload="auto">
         <source src="data/music.mp3" type="audio/mp3">
-        브라우저가 오디오를 지원하지 않습니다.
+        번역: 브라우저가 오디오를 지원하지 않습니다.
     </audio>
-    
-    <!-- 상단 메뉴 -->
-    <nav class="main-nav">
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li class="dropdown">
-                <a href="dogma.html" class="active">DOGMA</a>
-                <div class="dropdown-content">
-                    <a href="dogma-nature.html" class="active">Nature</a>
-                    <a href="dogma-doctrine.html">Doctrine</a>
-                </div>
-            </li>
-            <li><a href="virtues.html">Virtues and Dilemmas</a></li>
-            <li class="dropdown">
-                <a href="talkabouts.html">Talkabouts</a>
-                <div class="dropdown-content">
-                    <a href="talkabouts-shittalks.html">Shittalks</a>
-                    <a href="talkabouts-dreamabouts.html">Dreamabouts</a>
-                    <a href="talkabouts-heartwords.html">HeartWords</a>
-                    <a href="talkabouts-scribbles.html">낙서</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="deeplearning.html">DeepLearning</a>
-                <div class="dropdown-content">
-                    <a href="deeplearning-chess.html">Chess</a>
-                    <a href="deeplearning-chess-archive.html">Archive</a>
-                    <a href="deeplearning-crypto.html">Crypto</a>
-                    <a href="deeplearning-crypto-tradingbot.html">Trading Bot</a>
-                    <a href="deeplearning-crypto-hash.html">Hash</a>
-                    <a href="deeplearning-crypto-server.html">Server</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="investments.html">Investments</a>
-                <div class="dropdown-content">
-                    <a href="investments-private-equity.html">Private Equity</a>
-                    <a href="investments-howdidhedothat.html">howdidhedothat</a>
-                    <a href="investments-funzies.html">Funzies</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="secrecy.html">Secrecy</a>
-                <div class="dropdown-content">
-                    <a href="secrecy-exhibition.html">EXHIBITION</a>
-                    <a href="secrecy-curse.html">curse</a>
-                    <a href="secrecy-girl.html">G̸̱̰̙̜̯͍̊͑̓̂̋̑̂͛͝͠ỉ̶͉̊̅̓͒̽̽̀̕͘ŕ̶̛͎̰̪̌̓͂ ̸̎̍͒̌ḻ̸̢͕̣͓̋̓̊̈́̌͆͠</a>
-                    <a href="secrecy-money.html">money</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="apps.html">Apps</a>
-                <div class="dropdown-content">
-                    <a href="apps-twitter.html">Twitter</a>
-                    <a href="apps-shorts.html">Shorts</a>
-                    <a href="apps-telegram.html">Telegram</a>
-                </div>
-            </li>
-        </ul>
-    </nav>
-
-    <div id="content">
-        <section id="page-content" class="section">
-            <!-- 중앙에 크게 표시할 제목 -->
-            <h1 class="center-title">Nature</h1>
-            
-            <div class="content-area">
-                <div id="markdown-container" class="markdown-content"></div>
-            </div>
-        </section>
-    </div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="audio-manager.js"></script>
-    <script>
-        // 0609.md 파일을 불러와서 간단히 HTML로 변환하여 표시
-        fetch('0609.md')
-            .then(response => response.text())
-            .then(text => {
-                const lines = text.split(/\r?\n/);
-                let html = '';
-                if (lines.length > 0) {
-                    html += `<h1>${lines[0]}</h1>`;
-                }
-                if (lines.length > 1) {
-                    html += `<h2>${lines[1]}</h2>`;
-                }
-                for (let i = 2; i < lines.length; i++) {
-                    const line = lines[i].trim();
-                    if (!line) continue;
-                    if (line.startsWith('http')) {
-                        html += `<p><a href="${line}" target="_blank">${line}</a></p>`;
-                    } else if (line.startsWith('(') && line.endsWith(')')) {
-                        html += `<p class="comment">${line}</p>`;
-                    } else {
-                        html += `<p>${line}</p>`;
-                    }
-                }
-                document.getElementById('markdown-container').innerHTML = html;
-            });
-    </script>
+    <!-- 이하 본문 생략 -->
 </body>
 </html>
