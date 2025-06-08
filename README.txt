@@ -19,7 +19,8 @@
 
 ### 웹사이트 실행 방법
 
-1. index.html 파일을 웹 브라우저(Chrome, Firefox, Edge 등)에서 열어주세요.
+1. `index.html` 파일을 웹 브라우저(Chrome, Firefox, Edge 등)에서 바로 열어주세요.
+   이제 글자 데이터가 페이지 내부에 포함되어 있으므로 별도의 웹 서버가 필요하지 않습니다.
 2. 웹사이트가 열리면 ASCII Art 탭이 먼저 표시됩니다.
 3. "Matrix Rain 애니메이션" 탭을 클릭하여 푸른색 Matrix Rain 애니메이션을 볼 수 있습니다.
 

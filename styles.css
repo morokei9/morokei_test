@@ -41,7 +41,9 @@
 }
 
 .art-1 {
-  background-image: url('../data/image/image1.png');
+  background-image: url('data/image/image1.png');
+  background-color: rgba(255, 0, 0, 0.4);
+  background-blend-mode: multiply;
   height: 600px;
   overflow: hidden; /* 스크롤 제거 */
   min-height: 500px;
@@ -53,7 +55,9 @@
 }
 
 .art-2 {
-  background-image: url('../data/image/image2.png');
+  background-image: url('data/image/image2.png');
+  background-color: rgba(0, 255, 0, 0.4);
+  background-blend-mode: multiply;
   animation-delay: 5s;
   height: 600px;
   overflow: hidden; /* 스크롤 제거 */
@@ -66,7 +70,9 @@
 }
 
 .art-3 {
-  background-image: url('../data/image/image3.png');
+  background-image: url('data/image/image3.png');
+  background-color: rgba(0, 0, 255, 0.4);
+  background-blend-mode: multiply;
   animation-delay: 10s;
   height: 600px;
   overflow: hidden; /* 스크롤 제거 */

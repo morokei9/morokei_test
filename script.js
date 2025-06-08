@@ -268,18 +268,17 @@ $(document).ready(function() {
         startMediaPlayback();
     }
     
-    // letter1.txt와 letter2.txt 내용 가져와서 ASCII Art에 적용하는 함수
+    // letter1.txt와 letter2.txt 내용을 내장된 Base64 문자열에서 가져오는 함수
     function loadLetterContents() {
-        Promise.all([
-            fetch('letters/letter1.txt').then(res => res.text()),
-            fetch('letters/letter2.txt').then(res => res.text())
-        ]).then(([letter1Text, letter2Text]) => {
+        try {
+            const letter1Text = atob(letter1Base64);
+            const letter2Text = atob(letter2Base64);
             $('.art-1').text(letter1Text);
             $('.art-2').text(letter2Text);
             generateRandomLetters();
-        }).catch(error => {
-            console.error('Error loading letters:', error);
-        });
+        } catch (error) {
+            console.error('문자 데이터를 복원할 수 없습니다:', error);
+        }
     }
     // 랜덤 알파벳 생성 함수 (art-3용)
     function generateRandomLetters() {
