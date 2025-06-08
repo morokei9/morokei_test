@@ -173,6 +173,11 @@
             padding-left: 10px;
             margin: 10px 0;
         }
+        .markdown-content .comment {
+            font-size: 14px;
+            color: #999;
+            font-style: italic;
+        }
     </style>
 </head>
 <body>
@@ -255,14 +260,31 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="audio-manager.js"></script>
     <script>
-        // 0609.md 파일을 불러와서 마크다운을 HTML로 변환하여 표시
+        // 0609.md 파일을 불러와서 간단히 HTML로 변환하여 표시
         fetch('0609.md')
             .then(response => response.text())
-            .then(md => {
-                const html = marked.parse(md);
+            .then(text => {
+                const lines = text.split(/\r?\n/);
+                let html = '';
+                if (lines.length > 0) {
+                    html += `<h1>${lines[0]}</h1>`;
+                }
+                if (lines.length > 1) {
+                    html += `<h2>${lines[1]}</h2>`;
+                }
+                for (let i = 2; i < lines.length; i++) {
+                    const line = lines[i].trim();
+                    if (!line) continue;
+                    if (line.startsWith('http')) {
+                        html += `<p><a href="${line}" target="_blank">${line}</a></p>`;
+                    } else if (line.startsWith('(') && line.endsWith(')')) {
+                        html += `<p class="comment">${line}</p>`;
+                    } else {
+                        html += `<p>${line}</p>`;
+                    }
+                }
                 document.getElementById('markdown-container').innerHTML = html;
             });
     </script>
