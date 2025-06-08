@@ -15,11 +15,11 @@
 
 /* Custom cursor applied to the entire site */
 body {
-  cursor: url("skyrim-cursors/pointer.cur"), auto;
+  cursor: url("skyrim-bbd-2023-12-24 (1)/pointer.cur"), auto;
 }
 
 a {
-  cursor: url("skyrim-cursors/link.cur"), pointer;
+  cursor: url("skyrim-bbd-2023-12-24 (1)/link.cur"), pointer;
 }
 
 .asciiart {
@@ -50,7 +50,7 @@ a {
 }
 
 .art-1 {
-  background-image: url('../data/image/image1.png');
+  background-image: url('data/image/image1.png');
   height: 600px;
   overflow: hidden; /* 스크롤 제거 */
   min-height: 500px;
@@ -62,7 +62,7 @@ a {
 }
 
 .art-2 {
-  background-image: url('../data/image/image2.png');
+  background-image: url('data/image/image2.png');
   animation-delay: 5s;
   height: 600px;
   overflow: hidden; /* 스크롤 제거 */
@@ -75,7 +75,7 @@ a {
 }
 
 .art-3 {
-  background-image: url('../data/image/image3.png');
+  background-image: url('data/image/image3.png');
   animation-delay: 10s;
   height: 600px;
   overflow: hidden; /* 스크롤 제거 */
