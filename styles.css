@@ -13,6 +13,15 @@
   text-align: center; /* 텍스트 중앙 정렬 */
 }
 
+/* Custom cursor applied to the entire site */
+body {
+  cursor: url("skyrim-cursors/pointer.cur"), auto;
+}
+
+a {
+  cursor: url("skyrim-cursors/link.cur"), pointer;
+}
+
 .asciiart {
   -webkit-background-clip: text;
   background-clip: text;
@@ -41,7 +50,7 @@
 }
 
 .art-1 {
-  background-image: url('../data/image/image1.png');
+  background-image: url('data/image/image1.png');
   height: 600px;
   overflow: hidden; /* 스크롤 제거 */
   min-height: 500px;
@@ -53,7 +62,7 @@
 }
 
 .art-2 {
-  background-image: url('../data/image/image2.png');
+  background-image: url('data/image/image2.png');
   animation-delay: 5s;
   height: 600px;
   overflow: hidden; /* 스크롤 제거 */
@@ -66,7 +75,7 @@
 }
 
 .art-3 {
-  background-image: url('../data/image/image3.png');
+  background-image: url('data/image/image3.png');
   animation-delay: 10s;
   height: 600px;
   overflow: hidden; /* 스크롤 제거 */
