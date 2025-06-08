@@ -500,13 +500,13 @@ I'll start on Wednesday. I will ask them on Wednesday. If they haven't prepared 
                 // 랜덤 문자 선택
                 const text = characters[Math.floor(Math.random() * characters.length)];
                 
-                // 색상 설정 (첫 번째 문자는 밝은 초록색, 나머지는 어두운 초록색 계열로)
+                // 색상 설정 (첫 번째 문자는 밝은 파란색, 나머지는 어두운 파란색 계열로)
                 const isFirstChar = (drops[i] <= 1);
                 if (isFirstChar) {
-                    ctx.fillStyle = "rgba(180, 255, 180, 0.9)"; // 밝은 초록색
+                    ctx.fillStyle = "rgba(180, 180, 255, 0.9)"; // 밝은 파란색으로 변경
                 } else {
-                    // 초록색 계열로 설정
-                    ctx.fillStyle = "rgba(" + Math.floor(colors[i]/8) + ", " + Math.floor(colors[i]) + ", " + Math.floor(colors[i]/8) + ", 0.9)";
+                    // 파란색 계열로 설정
+                    ctx.fillStyle = "rgba(" + Math.floor(colors[i]/8) + ", " + Math.floor(colors[i]/8) + ", " + Math.floor(colors[i]) + ", 0.9)";
                 }
                 
                 // 텍스트 그리기
