@@ -334,7 +334,7 @@ $(document).ready(function() {
         style.textContent = `
             @font-face {
                 font-family: 'CustomMatrix';
-                src: url('data/font.ttf') format('truetype');
+                src: url('fonts/font.ttf') format('truetype');
                 font-weight: normal;
                 font-style: normal;
                 font-display: block;
@@ -354,7 +354,7 @@ $(document).ready(function() {
         
         // 이미지로 폰트 프리로드 (대체 방법)
         const img = new Image();
-        img.src = 'data/font.ttf';
+        img.src = 'fonts/font.ttf';
         
         // 화면에 보이지 않는 요소 추가
         const preloader = document.createElement('div');
@@ -384,7 +384,7 @@ $(document).ready(function() {
         // FontFace API를 사용한 폰트 로드
         if ('FontFace' in window) {
             try {
-                const fontFace = new FontFace('CustomMatrix', 'url(data/font.ttf)');
+                const fontFace = new FontFace('CustomMatrix', 'url(fonts/font.ttf)');
                 fontFace.load().then(function(loadedFace) {
                     document.fonts.add(loadedFace);
                     console.log('FontFace API: 커스텀 폰트가 로드되었습니다!');
