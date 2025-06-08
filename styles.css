@@ -13,6 +13,15 @@
   text-align: center; /* 텍스트 중앙 정렬 */
 }
 
+/* Custom cursor applied to the entire site */
+body {
+  cursor: url("skyrim-cursors/pointer.cur"), auto;
+}
+
+a {
+  cursor: url("skyrim-cursors/link.cur"), pointer;
+}
+
 .asciiart {
   -webkit-background-clip: text;
   background-clip: text;
