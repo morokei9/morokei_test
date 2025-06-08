@@ -160,10 +160,17 @@
             z-index: 1000;
         }
         .dogma-bottom .btn {
-            margin: 0 60px;
+            position: absolute;
+            margin: 0;
             background-color: #000;
             color: #fff;
             border: 1px solid #666;
+        }
+        .dogma-bottom .btn:first-child {
+            left: 15%;
+        }
+        .dogma-bottom .btn:last-child {
+            left: 85%;
         }
         .dogma-bottom .btn:hover {
             background-color: #333;
@@ -256,6 +263,7 @@
     <!-- 하단 중앙 문구 및 버튼 -->
     <div class="dogma-bottom">
         <a href="dogma-nature.html" class="btn me-3">nature</a>
+        <span class="dogma-weird">T̴h̵u̴s̵ ̷S̷p̷o̸k̷e̶ ̴Z̶a̷r̵a̴t̶h̵u̶s̶t̷r̸a̴</span>
         <a href="dogma-doctrine.html" class="btn ms-3">doctrine</a>
     </div>
 
