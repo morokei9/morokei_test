@@ -149,6 +149,23 @@
             color: #ddd;
             text-shadow: 0 0 5px rgba(0, 120, 255, 0.5);
         }
+
+        /* 하단 영역 스타일 */
+        .dogma-bottom {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            z-index: 1000;
+        }
+        .dogma-bottom .btn {
+            margin: 0 20px;
+        }
+        .dogma-weird {
+            font-size: 24px;
+            margin: 0 10px;
+        }
     </style>
 </head>
 <body>
@@ -222,11 +239,18 @@
         <section id="page-content" class="section">
             <!-- 중앙에 크게 표시할 제목 -->
             <h1 class="center-title">DOGMA</h1>
-            
+
             <div class="content-area">
                 <!-- 여기는 내용을 비워둠 -->
             </div>
         </section>
+    </div>
+
+    <!-- 하단 중앙 문구 및 버튼 -->
+    <div class="dogma-bottom">
+        <a href="dogma-nature.html" class="btn btn-primary me-3">nature</a>
+        <span class="dogma-weird">T̴h̵u̴s̵ ̷S̷p̷o̸k̷e̶ ̴Z̶a̷r̵a̴t̶h̵u̶s̶t̷r̸a̴</span>
+        <a href="dogma-doctrine.html" class="btn btn-primary ms-3">doctrine</a>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
