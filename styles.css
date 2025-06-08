@@ -15,11 +15,11 @@
 
 /* Custom cursor applied to the entire site */
 body {
-  cursor: url("skyrim-bbd-2023-12-24 (1)/pointer.cur"), auto;
+  cursor: url("skyrim-cursors/pointer.cur"), auto;
 }
 
 a {
-  cursor: url("skyrim-bbd-2023-12-24 (1)/link.cur"), pointer;
+  cursor: url("skyrim-cursors/link.cur"), pointer;
 }
 
 .asciiart {
