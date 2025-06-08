@@ -19,9 +19,13 @@
 
 ### 웹사이트 실행 방법
 
-1. index.html 파일을 웹 브라우저(Chrome, Firefox, Edge 등)에서 열어주세요.
-2. 웹사이트가 열리면 ASCII Art 탭이 먼저 표시됩니다.
-3. "Matrix Rain 애니메이션" 탭을 클릭하여 푸른색 Matrix Rain 애니메이션을 볼 수 있습니다.
+1. 터미널에서 프로젝트 폴더로 이동한 뒤 간단한 웹 서버를 실행합니다.
+   예) Python이 설치되어 있다면 `python3 -m http.server` 명령을 사용합니다.
+2. 이렇게 실행한 서버 주소(`http://localhost:8000` 등)에서 `index.html`을 열어주세요.
+   파일을 직접 더블 클릭해 여는 경우 일부 브라우저에서 보안 정책 때문에
+   ASCII Art 텍스트가 로드되지 않을 수 있습니다.
+3. 웹사이트가 열리면 ASCII Art 탭이 먼저 표시됩니다.
+4. "Matrix Rain 애니메이션" 탭을 클릭하여 푸른색 Matrix Rain 애니메이션을 볼 수 있습니다.
 
 ### 참고사항
 
