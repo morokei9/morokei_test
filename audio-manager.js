@@ -18,7 +18,8 @@ const AudioManager = {
         
         // localStorage에서 상태 복원
         this.currentTime = parseFloat(localStorage.getItem('audioCurrentTime') || '0');
-        this.isPlaying = localStorage.getItem('audioPlaying') === 'true' || true; // 기본값을 true로 설정
+        const storedPlaying = localStorage.getItem('audioPlaying');
+        this.isPlaying = storedPlaying ? storedPlaying === 'true' : false; // 기본값을 false로 설정
         
         // 오디오 요소 가져오기 또는 생성
         this.audioElement = document.getElementById('background-music');
@@ -171,7 +172,8 @@ const AudioManager = {
         if (!this.audioElement) return;
         
         const savedTime = parseFloat(localStorage.getItem('audioCurrentTime') || '0');
-        const wasPlaying = localStorage.getItem('audioPlaying') === 'true' || true; // 기본값 true
+        const storedPlaying = localStorage.getItem('audioPlaying');
+        const wasPlaying = storedPlaying ? storedPlaying === 'true' : false; // 기본값 false
         
         if (savedTime > 0) {
             this.currentTime = savedTime;
