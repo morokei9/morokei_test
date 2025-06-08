@@ -1,0 +1,22 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*~
+*.log
+*.tmp
+*.swp
+*.swo
+*.bak
+
+# Build outputs
+node_modules/
+dist/
+build/
+out/
+__pycache__/
+*.pyc
+*.o
+*.class
+*.exe
