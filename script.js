@@ -78,9 +78,7 @@ $(document).ready(function() {
     // ASCII Art 텍스트 설정 (letter1.txt와 letter2.txt 내용 사용)
     loadLetterContents();
     
-    // 랜덤 알파벳 생성 (art-3용)
-    generateRandomLetters();
-    
+    // 랜덤 알파벳은 글자 로드 후 생성
     // 음악 재생 버튼 제거하고 자동 재생 강화
     // 페이지 클릭 시 음악 자동 재생 시도
     $(document).on('click', function() {
@@ -272,23 +270,17 @@ $(document).ready(function() {
     
     // letter1.txt와 letter2.txt 내용 가져와서 ASCII Art에 적용하는 함수
     function loadLetterContents() {
-        // letter1.txt 내용
-        const letter1Text = `KPLM-11987
-
-ă̶̸̝ͦ͊̿͋͞s̩͙͖̋͛͟ă̶̸̝ͦ͊̿͋͞k̶̸͙̭̹͆͟i̵͓͙̱͚̎͟ U̸̫̠̰͈̕n̷̶̯͉̊̽̐ͦ͘i̵͓͙̱͚̎͟v̸̵̝͙͆̈ͤę̷̵̧̖̫̗̆̊r̶̷̲͍̭͐̾̀͟s̩͙͖̋͛͟i̵͓͙̱͚̎͟t̴͕͖͓̀y̯̤͑́́̓́, 1̷̸̫̐͂̕-1̷̸̫̐͂̕4̷̱ͧͩ̈̀͢͜ B̟̈́̆̐̄̚͜û̶͙̽̿͆̈n̷̶̯͉̊̽̐ͦ͘k̶̸͙̭̹͆͟y̯̤͑́́̓́ȍ̸̢̢̮͚̐̚-m̶̷͔ͪ̽͡ă̶̸̝ͦ͊̿͋͞c̷̹͖͋́̃h̶̯̰̝̻̿̓͢i̵͓͙̱͚̎͟, N̰̜͉͔ͬ̽͢ă̶̸̝ͦ͊̿͋͞g̴̶̛̮̣͙͠ă̶̸̝ͦ͊̿͋͞s̩͙͖̋͛͟ă̶̸̝ͦ͊̿͋͞k̶̸͙̭̹͆͟i̵͓͙̱͚̎͟ 8̷̴̹̅̑ͬ̓͟5̸̷͇̽̏ͥͤ2̱̜̥̒̌̂̕͟-8̷̴̹̅̑ͬ̓͟5̸̷͇̽̏ͥͤ2̱̜̥̒̌̂̕͟1̷̸̫̐͂̕, J̸̧̪̫̫̩̿͗͑̇̕͟ă̶̸̝ͦ͊̿͋͞p̶̸̨̺͊̍̒̓̀ă̶̸̝ͦ͊̿͋͞n̷̶̯͉̊̽̐ͦ͘ 2̱̜̥̒̌̂̕͟F̵̦̺͕́̐͟ă̶̸̝ͦ͊̿͋͞c̷̹͖͋́̃û̶͙̽̿͆̈ḻ̸͈ͧ͑̓̓̀͡t̴͕͖͓̀y̯̤͑́́̓́ ȍ̸̢̢̮͚̐̚f̷̵̫̞̉͢ F̵̦̺͕́̐͟i̵͓͙̱͚̎͟s̩͙͖̋͛͟h̶̯̰̝̻̿̓͢ę̷̵̧̖̫̗̆̊r̶̷̲͍̭͐̾̀͟i̵͓͙̱͚̎͟ę̷̵̧̖̫̗̆̊s̩͙͖̋͛͟, N̰̜͉͔ͬ̽͢ă̶̸̝ͦ͊̿͋͞g̴̶̛̮̣͙͠ă̶̸̝ͦ͊̿͋͞s̩͙͖̋͛͟ă̶̸̝ͦ͊̿͋͞k̶̸͙̭̹͆͟i̵͓͙̱͚̎͟ U̸̫̠̰͈̕n̷̶̯͉̊̽̐ͦ͘i̵͓͙̱͚̎͟v̸̵̝͙͆̈ͤę̷̵̧̖̫̗̆̊r̶̷̲͍̭͐̾̀͟s̩͙͖̋͛͟i̵͓͙̱͚̎͟t̴͕͖͓̀y̯̤͑́́̓́, 1̷̸̫̐͂̕-1̷̸̫̐͂̕4̷̱ͧͩ̈̀͢͜ B̟̈́̆̐̄̚͜û̶͙̽̿͆̈n̷̶̯͉̊̽̐ͦ͘k̶̸͙̭̹͆͟y̯̤͑́́̓́ȍ̸̢̢̮͚̐̚-m̶̷͔ͪ̽͡ă̶̸̝ͦ͊̿͋͞c̷̹͖͋́̃h̶̯̰̝̻̿̓͢i̵͓͙̱͚̎͟, N̰̜͉͔ͬ̽͢ă̶̸̝ͦ͊̿͋͞g̴̶̛̮̣͙͠ă̶̸̝ͦ͊̿͋͞s̩͙͖̋͛͟ă̶̸̝ͦ͊̿͋͞k̶̸͙̭̹͆͟i̵͓͙̱͚̎͟ 8̷̴̹̅̑ͬ̓͟5̸̷͇̽̏ͥͤ2̱̜̥̒̌̂̕͟-8̷̴̹̅̑ͬ̓͟5̸̷͇̽̏ͥͤ2̱̜̥̒̌̂̕͟1̷̸̫̐͂̕, J̸̧̪̫̫̩̿͗͑̇̕͟ă̶̸̝ͦ͊̿͋͞p̶̸̨̺͊̍̒̓̀ă̶̸̝ͦ͊̿͋͞n̷̶̯͉̊̽̐ͦ͘ ,1̷̸̫̐͂̕,3̵̷̧̗͙̰̽̋͟, * T̷̫͉̰͕̒́ę̷̵̧̖̫̗̆̊t̴͕͖͓̀s̩͙͖̋͛͟û̶͙̽̿͆̈n̷̶̯͉̊̽̐ͦ͘ă̶̸̝ͦ͊̿͋͞r̶̷̲͍̭͐̾̀͟i̵͓͙̱͚̎͟ T̷̫͉̰͕̒́ă̶̸̝ͦ͊̿͋͞t̴͕͖͓̀ę̷̵̧̖̫̗̆̊i̵͓͙̱͚̎͟s̩͙͖̋͛͟h̶̯̰̝̻̿̓͢i̵͓͙̱͚̎͟,2̱̜̥̒̌̂̕͟ Ŗ̴̪̈̄͞y̯̤͑́́̓́û̶͙̽̿͆̈s̩͙͖̋͛͟û̶͙̽̿͆̈k̶̸͙̭̹͆͟ę̷̵̧̖̫̗̆̊ T̷̫͉̰͕̒́ę̷̵̧̖̫̗̆̊r̶̷̲͍̭͐̾̀͟ă̶̸̝ͦ͊̿͋͞d̸̡̩͍̔ͥ͜ă̶̸̝ͦ͊̿͋͞,2̱̜̥̒̌̂̕͟ K̦̖̙̱̮̐̌i̵͓͙̱͚̎͟y̯̤͑́́̓́ȍ̸̢̢̮͚̐̚s̩͙͖̋͛͟h̶̯̰̝̻̿̓͢i̵͓͙̱͚̎͟ S̵̶̮̬͖̄͑͟ȍ̸̢̢̮͚̐̚y̯̤͑́́̓́ă̶̸̝ͦ͊̿͋͞n̷̶̯͉̊̽̐ͦ͘ȍ̸̢̢̮͚̐̚,4̷̱ͧͩ̈̀͢͜`;
-
-        // letter2.txt 내용
-        const letter2Text = `We should talk when u back to korea, i think its important. Also hope u slept well and probably u enjoying last day vacation, I'm happy when you are happy, also I saw your photos, building look amazing and my bf also look perfect like always, I won't bother you today, just spend a good time, eat well and enjoy last day how much u can please, if u want send me photos later, I really love looking through these pictures, sometimes I look at them a couple of times.
-
-sometimes I think I have some kind of radar because my notifications are turned off and how I usually look at conversations as you write. Have fun! Btw i love this place so much... its my style. I thought of you baby. Did you sleep well honey? Yeah, im always wonder how. I finally finished cleaning the kitchen.
-
-I'll start on Wednesday. I will ask them on Wednesday. If they haven't prepared a work plan for me yet, maybe I have something to say. You are so lovely. Im really lucky. Just do it consciously no rush or pressure. I love you. But i know, you are really loved, you worry and want good for me, it's cute. You are my angel. My guardian. My bodyguard. Lover and someone who make me smile and happy. Now im romantic. Happy to read, I love you too.`;
-        
-        // 각 ASCII Art 요소에 텍스트 설정
-        $('.art-1').text(letter1Text);
-        $('.art-2').text(letter2Text);
+        Promise.all([
+            fetch('letters/letter1.txt').then(res => res.text()),
+            fetch('letters/letter2.txt').then(res => res.text())
+        ]).then(([letter1Text, letter2Text]) => {
+            $('.art-1').text(letter1Text);
+            $('.art-2').text(letter2Text);
+            generateRandomLetters();
+        }).catch(error => {
+            console.error('Error loading letters:', error);
+        });
     }
-    
     // 랜덤 알파벳 생성 함수 (art-3용)
     function generateRandomLetters() {
         const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
