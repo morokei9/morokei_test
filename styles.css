@@ -22,6 +22,7 @@
   -webkit-text-fill-color: transparent;
   text-fill-color: transparent;
   word-break: break-all;
+  white-space: pre; /* preserve ASCII art formatting */
   
   color: #fff;
   font-family: monospace;
