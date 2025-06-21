@@ -268,63 +268,46 @@ $(document).ready(function() {
         startMediaPlayback();
     }
     
-    // letter1.txt와 letter2.txt 내용 가져와서 ASCII Art에 적용하는 함수
+    // 이미지 파일을 ASCII Art로 변환하여 각 영역에 표시하는 함수
     function loadLetterContents() {
-        Promise.all([
-            fetch('letters/letter1.txt').then(res => res.text()),
-            fetch('letters/letter2.txt').then(res => res.text())
-        ]).then(([letter1Text, letter2Text]) => {
-            $('.art-1').text(letter1Text);
-            $('.art-2').text(letter2Text);
-            generateRandomLetters();
-        }).catch(error => {
-            console.error('Error loading letters:', error);
-            const warn = '파일을 로드할 수 없습니다. 로컬 웹 서버에서 실행해 보세요.';
-            $('.art-1').text(warn);
-            $('.art-2').text(warn);
+        const images = [
+            {src: 'data/image/image1.png', target: '.art-1'},
+            {src: 'data/image/image2.png', target: '.art-2'},
+            {src: 'data/image/image3.png', target: '.art-3'}
+        ];
+
+        images.forEach(info => {
+            const img = new Image();
+            img.src = info.src;
+            img.onload = function() {
+                const width = 80;
+                const height = Math.floor(img.height * (width / img.width));
+                const canvas = document.createElement('canvas');
+                canvas.width = width;
+                canvas.height = height;
+                const ctx = canvas.getContext('2d');
+                ctx.drawImage(img, 0, 0, width, height);
+                const data = ctx.getImageData(0, 0, width, height).data;
+                const chars = '@%#*+=-:. ';
+                let ascii = '';
+                for (let y = 0; y < height; y++) {
+                    for (let x = 0; x < width; x++) {
+                        const idx = (y * width + x) * 4;
+                        const r = data[idx];
+                        const g = data[idx + 1];
+                        const b = data[idx + 2];
+                        const brightness = 0.299 * r + 0.587 * g + 0.114 * b;
+                        const charIndex = Math.floor(brightness / 255 * (chars.length - 1));
+                        ascii += chars.charAt(charIndex);
+                    }
+                    ascii += '\n';
+                }
+                $(info.target).text(ascii);
+            };
+            img.onerror = function() {
+                $(info.target).text('이미지를 불러올 수 없습니다.');
+            };
         });
-    }
-    // 랜덤 알파벳 생성 함수 (art-3용)
-    function generateRandomLetters() {
-        const alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-        let randomText = "";
-        
-        // 약 500,000자 정도의 랜덤 텍스트 생성 (대폭 증가)
-        for (let i = 0; i < 500000; i++) {
-            const randomChar = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-            randomText += randomChar;
-            
-            // 띄어쓰기 간격 줄여서 더 많은 문자 표시
-            if (i % 20 === 0) {
-                randomText += " ";
-            }
-            if (i % 200 === 0) {
-                randomText += "\n";
-            }
-        }
-        
-        // 기존 letter1.txt, letter2.txt 내용을 여러 번 반복 (이미지 완전히 표시되도록)
-        const letter1Text = $('.art-1').text();
-        const letter2Text = $('.art-2').text();
-        
-        // Image 1과 Image 2 모두 글자 수 늘림
-        $('.art-1').text(letter1Text.repeat(100)); // Image 1의 글자 수 유지
-        $('.art-2').text(letter2Text.repeat(15));  // Image 2 글자 수 3배 증가
-        
-        // 랜덤 알파벳 텍스트 적용 - 더 많은 텍스트 생성 (1,000,000자)
-        for (let i = 500000; i < 1000000; i++) {
-            const randomChar = alphabet.charAt(Math.floor(Math.random() * alphabet.length));
-            randomText += randomChar;
-            
-            // 띄어쓰기 간격 줄여서 더 많은 문자 표시
-            if (i % 20 === 0) {
-                randomText += " ";
-            }
-            if (i % 200 === 0) {
-                randomText += "\n";
-            }
-        }
-        $('#random-letters').text(randomText);
     }
     
     // 커스텀 폰트 미리 로드 함수
